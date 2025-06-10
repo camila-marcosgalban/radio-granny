@@ -135,7 +135,7 @@ h1 {
   background-color: #806baf;
 }
 
-@media (max-width: 600px) {
+/* @media (min-width: 600px) {
   .play-button {
     font-size: 5vw;
     width: 18vw;
@@ -146,7 +146,7 @@ h1 {
     font-size: 3.5vw;
     padding: 2vw 4vw;
   }
-}
+} */
 
 @media (min-width: 800px) {
   .play-button {
