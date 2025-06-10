@@ -4,7 +4,7 @@ import "./RadioApp.css";
 const stations = [
   {
     name: "99.9",
-    url: "http://buecrplb01.cienradios.com.ar/la100.aac",
+    url: "https://24373.live.streamtheworld.com/FM999_56AAC.aac",
     image: "https://upload.wikimedia.org/wikipedia/commons/5/52/Logo_La100_Verde.JPG"
   },
   {
@@ -14,7 +14,7 @@ const stations = [
   },
   {
     name: "102.3",
-    url: "https://27403.live.streamtheworld.com/ASPEN.mp3",
+    url: "https://24253.live.streamtheworld.com/ASPEN.mp3",
     image: "https://myradioenvivo.ar/public/uploads/radio_img/aspen-102-3/fb_cover.jpg"
   }
 ];
