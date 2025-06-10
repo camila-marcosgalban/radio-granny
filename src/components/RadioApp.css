@@ -1,0 +1,140 @@
+body {
+  background: linear-gradient(180deg, #111 0%, #222 50%, #111 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.radio-card {
+  background: linear-gradient(180deg, #111, #1e1e1e, #111);
+  color: white;
+  width: 90vw;
+  max-width: 400px;
+  padding: 5vw;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.disc-container {
+  width: 45vw;
+  max-width: 200px;
+  height: 45vw;
+  max-height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgb(67, 67, 67) 60%, rgba(0, 0, 0, 1) 99%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 5vw;
+  border: 3px solid #444;
+  position: relative;
+  box-shadow: 2px 2px 20px rgb(59, 59, 59);
+}
+
+.spin {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cover-image {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.station-info {
+  text-align: center;
+  margin-bottom: 5vw;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vw;
+  width: 100%;
+}
+
+.play-button {
+  background: #806baf;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 4vw;
+  text-transform: uppercase;
+  border-radius: 50%;
+  width: 18vw;
+  height: 18vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  max-width: 80px;
+  max-height: 80px;
+  transition: background 0.3s ease;
+}
+
+.play-button:hover {
+  background: #a88be0;
+}
+
+.station-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 2vw;
+  width: 100%;
+}
+
+.station-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 2vw 4vw;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 3.5vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.station-btn:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.station-btn.active {
+  background-color: #806baf;
+}
+
+@media (min-width: 600px) {
+  .play-button {
+    font-size: 16px;
+  }
+
+  .station-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
