@@ -71,7 +71,6 @@ h1{
 
 .station-info {
   text-align: center;
-  margin-bottom: 5vw;
 }
 
 .controls {
@@ -110,7 +109,6 @@ h1{
   flex-wrap: wrap;
   justify-content: center;
   gap: 2vw;
-  margin-top: 2vw;
   width: 100%;
 }
 
