@@ -49,12 +49,13 @@ function RadioApp() {
         <img src={currentStation.image} alt="cover" className="cover-image" />
       </div>
       <div className="station-info">
-        <h3>{currentStation.name}</h3>
+        <h2>{currentStation.name}</h2>
+        <h1>RADIO GRANNY</h1>
       </div>
       <audio ref={audioRef} src={currentStation.url} hidden />
       <div className="controls">
         <button onClick={togglePlay} className="play-button">
-          {isPlaying ? "⏸" : "▶️"}
+          {isPlaying ? "❚❚" : "▶"}
         </button>
         <div className="station-buttons">
           {stations.map((s) => (
