@@ -10,9 +10,9 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1{
-    font-size: 24px;
-    font-family: "Changa One", sans-serif;
+h1 {
+  font-size: 24px;
+  font-family: "Changa One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -21,7 +21,7 @@ h1{
   background: linear-gradient(180deg, #111, #1e1e1e, #111);
   color: white;
   width: 90vw;
-  max-width: 400px;
+  max-width: 500px;
   padding: 5vw;
   border-radius: 25px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
@@ -29,14 +29,12 @@ h1{
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  max-height: 90vh;
+  height: 90vh;
 }
 
 .disc-container {
-  width: 45vw;
-  max-width: 200px;
-  height: 45vw;
-  max-height: 200px;
+  width: min(45vw, 250px);
+  height: min(45vw, 250px);
   border-radius: 50%;
   background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgb(67, 67, 67) 60%, rgba(0, 0, 0, 1) 99%);
   display: flex;
@@ -46,6 +44,8 @@ h1{
   border: 3px solid #444;
   position: relative;
   box-shadow: 2px 2px 20px rgb(59, 59, 59);
+  margin-top: 1rem;
+  aspect-ratio: 1 / 1;
 }
 
 .spin {
@@ -71,6 +71,7 @@ h1{
 
 .station-info {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .controls {
@@ -86,18 +87,17 @@ h1{
   border: none;
   color: white;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 22px;
   text-transform: uppercase;
   border-radius: 50%;
-  width: 18vw;
-  height: 18vw;
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  max-width: 80px;
-  max-height: 80px;
   transition: background 0.3s ease;
+  margin-bottom: 2rem;
 }
 
 .play-button:hover {
@@ -116,10 +116,10 @@ h1{
   background-color: #333;
   color: white;
   border: none;
-  padding: 2vw 4vw;
+  padding: 1rem 1.5rem;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 3.5vw;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
   white-space: nowrap;
@@ -135,13 +135,29 @@ h1{
   background-color: #806baf;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 600px) {
   .play-button {
-    font-size: 16px;
+    font-size: 5vw;
+    width: 18vw;
+    height: 18vw;
   }
 
   .station-btn {
-    font-size: 12px;
-    padding: 8px 16px;
+    font-size: 3.5vw;
+    padding: 2vw 4vw;
   }
+}
+
+@media (min-width: 800px) {
+  .play-button {
+  margin-bottom: 1rem;
+}
+
+.station-info {
+  margin-bottom: 1rem;
+}
+
+.disc-container {
+  margin-top: 0rem;
+}
 }
