@@ -3,19 +3,13 @@ import "./RadioApp.css";
 
 const stations = [
   {
-    name: "99.9",
-    url: "https://24373.live.streamtheworld.com/FM999_56AAC.aac",
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/52/Logo_La100_Verde.JPG"
-  },
-  {
-    name: "100.7",
-    url: "https://26593.live.streamtheworld.com/BLUE_FM_100_7AAC.aac",
-    image: "https://myradioenvivo.ar/public/uploads/radio_img/blue-fm-100-7/play_250_250.webp"
-  },
-  {
-    name: "102.3",
-    url: "https://24253.live.streamtheworld.com/ASPEN.mp3",
-    image: "https://myradioenvivo.ar/public/uploads/radio_img/aspen-102-3/fb_cover.jpg"
+    name: "mitre",
+    url: "http://cdn.instream.audio:9288/stream",
+    image: "https://yt3.googleusercontent.com/LxXG-3oOpCykA27GwVGpcrWDmfe1KVvTy_69EjBBCkpUAtTjJhNGWmW0WVubfZjOEP8JQ5FO=s900-c-k-c0x00ffffff-no-rj"
+  },{
+    name: "2x4",
+    url: "https://media.radios.ar:9270/",
+    image: "https://myradioenvivo.ar/public/uploads/radio_img/la-2x4/play_250_250.webp"
   }
 ];
 

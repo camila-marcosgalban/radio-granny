@@ -1,6 +1,7 @@
 /* Ensure html, body, and root fill full viewport height */
-html, body, #root {
+html, body {
   height: 100vh;         /* Use full viewport height */
+  width: 90vw;
   margin: 0;
   padding: 0;
   background: #111;
@@ -13,9 +14,6 @@ html, body, #root {
 
 /* The root container already centers children */
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -66,7 +64,7 @@ html, body, #root {
 .cover-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Spin animation for disc */
