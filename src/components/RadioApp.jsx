@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./RadioApp.css";
 
+
 const stations = [
   {
     name: "mitre",
@@ -10,6 +11,14 @@ const stations = [
     name: "2x4",
     url: "https://media.radios.ar:9270/",
     image: "https://myradioenvivo.ar/public/uploads/radio_img/la-2x4/play_250_250.webp"
+  },{
+    name: "650",
+    url: "http://server.laradio.online:25223/live.mp3",
+    image: "https://thumbnail.anii.io/ar/radio-belgrano-am-650-am-buenos-aires-argentina.webp"
+  },{
+    name: "rivadavia",
+    url: "https://24233.live.streamtheworld.com/RIVADAVIAAAC.aac",
+    image: "https://imgsvr.radiocut.site/get/crop/center/200/200/radio_logos/77/93/7793b356-44fe-4e77-a360-8b95dc9fc943.jpg"
   }
 ];
 
