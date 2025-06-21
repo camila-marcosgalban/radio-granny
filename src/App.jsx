@@ -8,7 +8,9 @@ function App() {
 
   return (
     <>
-    <RadioApp/>
+    <div className="app-wrapper">
+  <RadioApp />
+</div>
     </>
   )
 }

@@ -20,9 +20,24 @@ const stations = [
 ];
 
 function RadioApp() {
+
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+
+useEffect(() => {
+  const handler = (e) => {
+    e.preventDefault();
+    setDeferredPrompt(e);
+  };
+  window.addEventListener("beforeinstallprompt", handler);
+  return () => window.removeEventListener("beforeinstallprompt", handler);
+}, []);
+
+
   const audioRef = useRef(null);
-  const [currentStation, setCurrentStation] = useState(stations[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const currentStation = stations[currentIndex];
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -34,8 +49,14 @@ function RadioApp() {
     setIsPlaying(!isPlaying);
   };
 
-  const changeStation = (station) => {
-    setCurrentStation(station);
+  const changeStation = (direction) => {
+    let nextIndex;
+    if (direction === "next") {
+      nextIndex = (currentIndex + 1) % stations.length;
+    } else {
+      nextIndex = (currentIndex - 1 + stations.length) % stations.length;
+    }
+    setCurrentIndex(nextIndex);
     setIsPlaying(false);
     setTimeout(() => {
       audioRef.current.play().catch(() => alert("Could not play audio."));
@@ -44,32 +65,39 @@ function RadioApp() {
   };
 
   return (
-    <div className="radio-card">
-      <div className={`disc-container ${isPlaying ? "spin" : ""}`}>        
-        <img src={currentStation.image} alt="cover" className="cover-image" />
-      </div>
-      <div className="station-info">
-        <h2>{currentStation.name}</h2>
-        <h1>RADIO GRANNY</h1>
-      </div>
-      <audio ref={audioRef} src={currentStation.url} hidden />
-      <div className="controls">
-        <button onClick={togglePlay} className="play-button">
-          {isPlaying ? "❚❚" : "▶"}
-        </button>
-        <div className="station-buttons">
-          {stations.map((s) => (
-            <button
-              key={s.name}
-              onClick={() => changeStation(s)}
-              className={`station-btn ${s.name === currentStation.name ? "active" : ""}`}
-            >
-              {s.name}
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
+   <div className="radio-card">
+    {deferredPrompt && (
+  <button
+    className="install-button"
+    onClick={() => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(() => {
+        setDeferredPrompt(null);
+      });
+    }}
+  >
+    Install App
+  </button>
+)}
+
+  <div className={`disc-container ${isPlaying ? "spin" : ""}`}>
+    <img src={currentStation.image} alt="cover" className="cover-image" />
+  </div>
+
+  <div className="station-info">
+    <h2>{currentStation.name}</h2>
+    <h1>RADIO GRANNY</h1>
+  </div>
+
+  <audio ref={audioRef} src={currentStation.url} hidden />
+
+  <div className="controls">
+    <button onClick={() => changeStation("prev")} className="nav-button">⏮</button>
+    <button onClick={togglePlay} className="play-button">{isPlaying ? "❚❚" : "▶"}</button>
+    <button onClick={() => changeStation("next")} className="nav-button">⏭</button>
+  </div>
+</div>
+
   );
 }
 
